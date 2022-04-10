@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 4em 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navbar navbar"
+    "Main-Section Main-Section";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.Main-Section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "Text-Area Illustrations-Area";
+  grid-area: Main-Section;
+}
+
+.Text-Area {
+  justify-self: center;
+  align-self: center;
+  grid-area: Text-Area;
+}
+
+.Illustrations-Area {
+  justify-self: center;
+  align-self: center;
+  grid-area: Illustrations-Area;
+}
