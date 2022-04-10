@@ -1,3 +1,18 @@
+/*Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+
+:root {
+  --BarlowFont: "Barlow Condensed", sans-serif;
+  --BellefairFont: "Bellefair", serif;
+}
+body {
+  margin: 0;
+  background-image: url("../assets/home/background-home-desktop.jpg");
+  color: white;
+  background-size: cover;
+  padding: 3rem 0 0 3rem;
+}
+
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -7,30 +22,67 @@
   grid-template-areas:
     "navbar navbar"
     "Main-Section Main-Section";
+  height: 100vh;
 }
 
 .navbar {
   grid-area: navbar;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
-
+.nav-logo img {
+  width: 80%;
+}
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(32, 33, 37, 0.315);
+  height: 5em;
+  width: 55rem;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.nav-item {
+  padding: 0 40px 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-link,
+.nav-link:visited {
+  font-size: 20px;
+  font-family: var(--BarlowFont);
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: white;
+  text-decoration: none;
+}
+.currentpage {
+  border-bottom: 5px solid white;
+}
 .Main-Section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  grid-template-areas: "Text-Area Illustrations-Area";
+  grid-template-areas: "Left-Area Right-Area";
   grid-area: Main-Section;
 }
 
-.Text-Area {
+.Left-Area {
   justify-self: center;
   align-self: center;
-  grid-area: Text-Area;
+  grid-area: Left-Area;
 }
 
-.Illustrations-Area {
+.Right-Area {
   justify-self: center;
   align-self: center;
-  grid-area: Illustrations-Area;
+  grid-area: Right-Area;
 }
