@@ -14,7 +14,8 @@ app.get("/destination", (req, res) => {
   res.render("destination", { CSSLINK: csslinkD });
 });
 app.get("/crew", (req, res) => {
-  res.render("crew");
+  const csslinkC = "css/crew-styles.css";
+  res.render("crew", { CSSLINK: csslinkC });
 });
 app.get("/technology", (req, res) => {
   res.render("technology");
