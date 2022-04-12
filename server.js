@@ -18,7 +18,8 @@ app.get("/crew", (req, res) => {
   res.render("crew", { CSSLINK: csslinkC });
 });
 app.get("/technology", (req, res) => {
-  res.render("technology");
+  const csslinkT = "css/Technology-styles.css";
+  res.render("technology", { CSSLINK: csslinkT });
 });
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

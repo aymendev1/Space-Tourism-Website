@@ -1,0 +1,176 @@
+/*Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Bellefair&display=swap");
+
+:root {
+  --BarlowFont: "Barlow Condensed", sans-serif;
+  --BellefairFont: "Bellefair", serif;
+}
+body {
+  margin: 0;
+  background-image: url("../assets/technology/background-technology-desktop.jpg");
+  color: white;
+  background-size: cover;
+}
+/*NAVBAR*/
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 4em 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navbar navbar"
+    "Main-Section Main-Section";
+  height: 100vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 3rem 0 0 3rem;
+}
+.nav-logo img {
+  width: 80%;
+}
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(32, 33, 37, 0.315);
+  height: 5em;
+  width: 55rem;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.nav-item {
+  margin: 0 40px 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-item:hover {
+  border-bottom: 5px solid grey;
+}
+.nav-link,
+.nav-link:visited {
+  font-size: 20px;
+  font-family: var(--BarlowFont);
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+.nav-items:first-child {
+  border-bottom: 5px solid white;
+}
+.Main-Section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "Left-Area Right-Area";
+  grid-area: Main-Section;
+}
+
+/******HomeSection****/
+.Left-Area {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  grid-area: Left-Area;
+}
+
+.content {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.content h3 {
+  font-family: var(--BarlowFont);
+  font-size: 2rem;
+  color: #d0d6f9;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+.TextContent {
+  padding: 20px 0 20px 0;
+}
+.TextContent h4 {
+  font-family: var(--BellefairFont);
+  font-weight: 400;
+  font-size: 1rem;
+  color: grey;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.TextContent h1 {
+  font-family: var(--BellefairFont);
+  font-weight: 400;
+  font-size: 4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 10px 0 10px 0;
+}
+.TextContent p {
+  font-family: var(--BarlowFont);
+  font-size: 22px;
+  text-align: justify;
+  word-spacing: 2px;
+  color: #d0d6f9;
+  line-height: 1.5;
+}
+.Right-Area {
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
+  align-self: center;
+  grid-area: Right-Area;
+  width: 90%;
+}
+.Right-img {
+  text-align: right;
+}
+.Right-img img {
+  width: 70%;
+}
+.subcontent {
+  display: flex;
+  flex-direction: row;
+}
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 2rem;
+}
+.btn {
+  font-family: var(--BellefairFont);
+  font-weight: 400;
+  border: 1px solid grey;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 30px;
+  color: white;
+}
+.btn:hover {
+  color: rgb(32, 33, 37);
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
