@@ -4,22 +4,22 @@
         <div class="Left-Area">
             <div class="content">
                 <h3><span>01</span> PICK YOUR DESTINATION</h3>
-                <div class="planet-img"><img src="/assets/destination/image-moon.png" alt="Moon" srcset=""></div>
+                <div class="planet-img"><img alt="Planet" id="planetimg"></div>
 
             </div>
         </div>
         <div class="Right-Area">
             <div class="mini-nav">
-                <div class="mini-nav-item selected-item"><a>MOON</a></div>
-                <div class="mini-nav-item"><a>MARS</a></div>
-                <div class="mini-nav-item"><a>EUROPA</a></div>
-                <div class="mini-nav-item"><a>TITAN</a></div>
+                <div class="mini-nav-item selected-item" id="moon-btn"><a>MOON</a></div>
+                <div class="mini-nav-item" id="mars-btn"><a>MARS</a></div>
+                <div class="mini-nav-item" id="europa-btn"><a>EUROPA</a></div>
+                <div class="mini-nav-item" id="titan-btn"><a>TITAN</a></div>
             </div>
             <div class="title">
-                <h1>MOON</h1>
+                <h1 id="planet-title">MOON</h1>
             </div>
             <div class="description">
-                <p>The smallest of the four Galilean moons orbiting Jupiter, Europa is a
+                <p id="planet-description">The smallest of the four Galilean moons orbiting Jupiter, Europa is a
                     winter lover’s dream. With an icy surface, it’s perfect for a bit of
                     ice skating, curling, hockey, or simple relaxation in your snug
                     wintery cabin.</p>
@@ -27,17 +27,89 @@
             <div class="informations">
                 <div class="bx">
                     <h4>AVG . DISTANCE</h4>
-                    <span>628 MIL .KM</span>
+                    <span id="avg-distance">628 MIL .KM</span>
                 </div>
                 <div class="bx">
                     <h4>EST . TRAVEL TIME</h4>
-                    <span>3 YEARS</span>
+                    <span id="traveltime">3 YEARS</span>
                 </div>
             </div>
         </div>
         </div>
     </section>
-
+    <script>
+        let PlanetTitle = document.getElementById("planet-title");
+        let PlanetDesc = document.getElementById("planet-description");
+        let PlanetAvgDistance = document.getElementById("avg-distance");
+        let PlanetTravelTime = document.getElementById("traveltime");
+        let planetimg = document.getElementById("planetimg")
+        let moonbtn = document.getElementById("moon-btn");
+        let marsbtn = document.getElementById("mars-btn");
+        let europabtn = document.getElementById("europa-btn");
+        let titanbtn = document.getElementById("titan-btn");
+        let index = 0;
+        function clearmenu() {
+            moonbtn.classList.remove("selected-item");
+            marsbtn.classList.remove("selected-item");
+            europabtn.classList.remove("selected-item");
+            titanbtn.classList.remove("selected-item");
+        }
+        //Let's fetch data from the data.json
+        async function LoadDestination() {
+            url = "/destination/data"
+            const JSON = await fetch(url);
+            const planets = await JSON.json();
+            //Show data of Moon by default
+            PlanetTitle.innerText = planets[index].name;
+            PlanetDesc.innerText = planets[index].description;
+            PlanetAvgDistance.innerText = planets[index].distance;
+            PlanetTravelTime.innerText = planets[index].travel;
+            planetimg.setAttribute("src", planets[index].images.png)
+            console.log(planets[index].images.png)
+            //data by order / button click 
+            moonbtn.addEventListener("click", () => {
+                index = 0;
+                clearmenu();
+                moonbtn.classList.add("selected-item");
+                PlanetTitle.innerText = planets[index].name;
+                PlanetDesc.innerText = planets[index].description;
+                PlanetAvgDistance.innerText = planets[index].distance;
+                PlanetTravelTime.innerText = planets[index].travel;
+                planetimg.setAttribute("src", planets[index].images.png)
+            })
+            marsbtn.addEventListener("click", () => {
+                index = 1;
+                clearmenu();
+                marsbtn.classList.add("selected-item");
+                PlanetTitle.innerText = planets[index].name;
+                PlanetDesc.innerText = planets[index].description;
+                PlanetAvgDistance.innerText = planets[index].distance;
+                PlanetTravelTime.innerText = planets[index].travel;
+                planetimg.setAttribute("src", planets[index].images.png)
+            })
+            europabtn.addEventListener("click", () => {
+                index = 2;
+                clearmenu();
+                europabtn.classList.add("selected-item");
+                PlanetTitle.innerText = planets[index].name;
+                PlanetDesc.innerText = planets[index].description;
+                PlanetAvgDistance.innerText = planets[index].distance;
+                PlanetTravelTime.innerText = planets[index].travel;
+                planetimg.setAttribute("src", planets[index].images.png)
+            })
+            titanbtn.addEventListener("click", () => {
+                index = 3;
+                clearmenu();
+                titanbtn.classList.add("selected-item");
+                PlanetTitle.innerText = planets[index].name;
+                PlanetDesc.innerText = planets[index].description;
+                PlanetAvgDistance.innerText = planets[index].distance;
+                PlanetTravelTime.innerText = planets[index].travel;
+                planetimg.setAttribute("src", planets[index].images.png)
+            })
+        }
+        LoadDestination();
+    </script>
     </body>
 
     </html>

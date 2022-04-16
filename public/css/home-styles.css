@@ -136,3 +136,65 @@ body {
   border: 30px solid #1c1c1d83;
   cursor: pointer;
 }
+.nav-icon {
+  display: none;
+}
+/****Responsive Styles*****/
+@media only screen and (max-width: 900px) {
+  body {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+  .nav-items {
+    width: max-content;
+  }
+  .nav-item {
+    margin: 0 30px 0 30px;
+  }
+  .Main-Section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  .content {
+    text-align: center;
+  }
+  .content h3 {
+    font-size: 1rem;
+  }
+  .content h1 {
+    font-size: 8rem;
+  }
+  .content p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .btn-explore {
+    margin-top: 70px;
+    height: 150px;
+    width: 150px;
+    font-size: 20px;
+  }
+}
+/*Mobile**/
+@media only screen and (max-width: 425px) {
+  .nav-item {
+    display: none;
+  }
+  .nav-icon {
+    float: right;
+    display: block;
+  }
+  .nav-items {
+    flex-direction: column;
+    width: max-content;
+    height: fit-content;
+  }
+  .responsive {
+    display: block;
+  }
+  .nav-item a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

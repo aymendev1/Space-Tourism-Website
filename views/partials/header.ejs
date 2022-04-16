@@ -16,9 +16,28 @@
         <div class="navbar">
             <div class="nav-logo"><img src="assets/shared/logo.svg" alt="" srcset=""></div>
             <div class="nav-items">
-                <div class="nav-item"><a class="nav-link " href="/"> <b>00</b> HOME</a></div>
-                <div class="nav-item"><a class="nav-link" href="/destination"> <b>01</b> DESTINATION</a></div>
-                <div class="nav-item"><a class="nav-link" href="/crew"> <b>02</b> CREW</a></div>
-                <div class="nav-item"><a class="nav-link" href="/technology"> <b>03</b> TECHNOLOGIES</a></div>
+                <div class="nav-icon"><a href="javascript:void(0);" onclick="RespFunction()"> <img
+                            src="../assets/shared/icon-hamburger.svg" alt=""></a></div>
+                <div class="nav-item" id="nav"><a class="nav-link " href="/"> <b>00</b> HOME</a></div>
+                <div class="nav-item" id="nav"><a class="nav-link" href="/destination"> <b>01</b> DESTINATION</a></div>
+                <div class="nav-item" id="nav"><a class="nav-link" href="/crew"> <b>02</b> CREW</a></div>
+                <div class="nav-item" id="nav"><a class="nav-link" href="/technology"> <b>03</b> TECHNOLOGIES</a></div>
+
             </div>
         </div>
+        <script>
+            // Nav Responsive
+            function RespFunction() {
+                var list = document.querySelectorAll("[id='nav']");
+                for (let i = 0; i < list.length; i++) {
+                    const classes = list[i].className;
+                    if (classes === "nav-item") {
+                        list[i].className += " responsive";
+                    } else {
+                        list[i].className = "nav-item";
+                    }
+
+                }
+
+            }
+        </script>
